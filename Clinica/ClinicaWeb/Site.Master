@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ClinicaWeb.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="MisEstilos.css" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <header>
+            <h1>Clínica Médica</h1>
+
+        </header>
+
+        <div class="tab-content">
+            <ul class="nav nav-tabs">
+                <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="Turnos.aspx">Administrar Turnos</a>
+                </li>
+
+                <% if (ValidarRecepcionista() || ValidarAdministrador())
+                    { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="Medico.aspx">Administrar Médicos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Paciente.aspx">Administrar Pacientes</a>
+                </li>
+                <% } %>
+
+                <% if (ValidarAdministrador())
+                    { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="Persona.aspx">Administrar Personas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Usuario.aspx">Administrar Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Especialidades.aspx">Administrar Especialidades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Horarios.aspx">Administrar Horarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Estados.aspx">Administrar Estados</a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="cphBody" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="cphFooter" runat="server">
+                <footer>
+                    <hr />
+                    <div class="row">
+                        <div class="col-3 d-grid gap-2">
+                            <p>&copy; <%: DateTime.Now.Year %> - Mi Clínica Web ASP.NET</p>
+                        </div>
+                        <div class="col-3 d-grid gap-2">
+                            <asp:Label ID="lblUsuario" runat="server" Text="" ClientIDMode="Static"></asp:Label>
+                        </div>
+                        <div class="col-3 d-grid gap-2">
+                            <asp:Label ID="lblPerfil" runat="server" Text="" ClientIDMode="Static"></asp:Label>
+                        </div>
+                        <div class="col-3 d-grid gap-2 text-end">
+                            <asp:Button ID="btnSalir" runat="server" Text="Cerrar Sesion" OnClick="btnSalir_Click" CssClass="btn btn-secondary btn-sm" />
+                        </div>
+                    </div>
+                </footer>
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>
