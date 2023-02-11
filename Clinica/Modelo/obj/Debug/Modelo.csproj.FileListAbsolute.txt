@@ -1,0 +1,6 @@
+C:\Users\Macarena\Desktop\Clinica\Modelo\bin\Debug\Modelo.dll
+C:\Users\Macarena\Desktop\Clinica\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Macarena\Desktop\Clinica\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\Macarena\Desktop\Clinica\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Macarena\Desktop\Clinica\Modelo\obj\Debug\Modelo.dll
+C:\Users\Macarena\Desktop\Clinica\Modelo\obj\Debug\Modelo.pdb

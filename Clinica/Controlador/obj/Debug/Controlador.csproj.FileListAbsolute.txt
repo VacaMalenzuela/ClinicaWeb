@@ -1,0 +1,9 @@
+C:\Users\Macarena\Desktop\Clinica\Controlador\bin\Debug\Controlador.dll
+C:\Users\Macarena\Desktop\Clinica\Controlador\bin\Debug\Controlador.pdb
+C:\Users\Macarena\Desktop\Clinica\Controlador\bin\Debug\Modelo.dll
+C:\Users\Macarena\Desktop\Clinica\Controlador\bin\Debug\Modelo.pdb
+C:\Users\Macarena\Desktop\Clinica\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+C:\Users\Macarena\Desktop\Clinica\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\Macarena\Desktop\Clinica\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+C:\Users\Macarena\Desktop\Clinica\Controlador\obj\Debug\Controlador.dll
+C:\Users\Macarena\Desktop\Clinica\Controlador\obj\Debug\Controlador.pdb
